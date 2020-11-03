@@ -103,6 +103,8 @@ ole32.lib netapi32.lib uuid.lib /machine:i386   libcmt.lib  user32.lib  /nodefau
 
 这些文件会在 release 版本中
 
+下载地址:https://github.com/xiaomiwujiecao/use_vim_in_winX/releases/tag/download
+
 
 ### 配置 vundle 插件管理包
 
