@@ -120,7 +120,7 @@ ole32.lib netapi32.lib uuid.lib /machine:i386   libcmt.lib  user32.lib  /nodefau
 gcl https://github.com/VundleVim/Vundle.vim.git bundle/Vundle.vim
 ```
 
-###配置插件
+### 配置插件
 
 剩下的就是配置您的 `_vimrc` 文件， 你可以复制代码根目录下的示例文件，然后覆盖其内容到你的本地目录。
 再根据对应的内容，修改其对应的目录参数。
