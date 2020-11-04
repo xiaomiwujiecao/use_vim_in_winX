@@ -138,6 +138,10 @@ gcl https://github.com/VundleVim/Vundle.vim.git bundle/Vundle.vim
 
 ### 关于配置参数参考
 
+目前的版本优化文件为 `vimrc_demo2`，如需直接使用，可以复制到 `Vim` 的根目录下
+然后重命名为 `_vimrc`（`Vim/_vimrc` ，不是 `vim82` 下的）
+
+
 如果不想下载后打开，直接拷贝以下的配置项到你的 `_vimrc` 文件中:
 
 > 版本：82 ，如果版本不是82 ，请自行修改相应的参数
@@ -146,10 +150,10 @@ gcl https://github.com/VundleVim/Vundle.vim.git bundle/Vundle.vim
 " Vim with all enhancements
 source $VIMRUNTIME/vimrc_example.vim
 let mapleader=";"
-"  file type checking
+"  file type checking 
 filetype off
 set rtp+=$VIMRUNTIME/bundle/Vundle.vim
-"  start loading vundle plugins
+"  start loading vundle plugins 
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
@@ -184,12 +188,12 @@ Plugin 'isRuslan/vim-es6'
 Plugin 'cakebaker/scss-syntax.vim'
 " Erlang Runtime
 Plugin 'vim-erlang/vim-erlang-runtime'
-"  end of load plugins
+"  end of load plugins 
 call vundle#end()
 filetype plugin on
 filetype plugin indent on
 "  turn on file type indentation
-filetype indent on
+filetype indent on 
 " set the keymaps
 nmap LB 0
 nmap LE $
@@ -207,12 +211,18 @@ nnoremap <Leader>jw <C-W>j
 nmap <Leader>M %
 nmap <silent> <Leader>sw :FSHere<cr>
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
+
 " set file text content encoding
 set encoding=utf-8
 " set terminal encoding
 set termencoding=utf-8
 " set file encoding
 set fileencoding=utf-8
+set fencs=utf-8,ucs-bom,shift-jis,gb18030,gbk,gb2312,cp936
+if(has("win32") || has("win95") || has("win64") || has("win7") || has("win10"))
+    source $VIMRUNTIME/delmenu.vim
+    source $VIMRUNTIME/menu.vim
+endif
 " set the language message encoding
 language messages zh_CN.utf-8
 "  no temporary files are generated
@@ -253,7 +263,7 @@ set cursorline
 set cursorcolumn
 " highlight search results
 set hlsearch
-" no folding
+" no folding 
 set nowrap
 " expand tabs to spaces
 set expandtab
@@ -275,11 +285,11 @@ syntax on
 syntax keyword cppSTLtype initializer_list
 " encapsulate the command line parameters of the external command wmctrl to maximize the control window into a vim function
 fun! ToggleFullscreen()
-        call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")
+	call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")
 endf
 " booting with vim
 let g:indent_guides_enable_on_vim_startup=1
-" show indentation from the second level
+" show indentation from the second level  
 let g:indent_guides_start_level=2
 " color block width
 let g:indent_guides_guide_size=1
@@ -313,12 +323,12 @@ let g:SignatureMap = {
 " automatically full screen when starting vim
 autocmd VimEnter * call ToggleFullscreen()
 
-" the position of the set tagbar sub-window appears on the left side of the main editing area
-let tagbar_left=1
+" the position of the set tagbar sub-window appears on the left side of the main editing area 
+let tagbar_left=1 
 " identifier list by tag
-nnoremap <Leader>ilt :TagbarToggle<CR>
+nnoremap <Leader>ilt :TagbarToggle<CR> 
 " tabbar sub-window's width
-let tagbar_width=32
+let tagbar_width=32 
 " tagbar's sub-window don't show the help info
 let g:tagbar_compact=1
 " set which code identifiers ctags generates tags for
@@ -326,7 +336,7 @@ let g:tagbar_type_cpp = {
     \ 'kinds' : [
          \ 'c:classes:0:1',
          \ 'd:macros:0:1',
-         \ 'e:enumerators:0:0',
+         \ 'e:enumerators:0:0', 
          \ 'f:functions:0:1',
          \ 'g:enumeration:0:1',
          \ 'l:local:0:1',
@@ -356,12 +366,12 @@ let g:tagbar_type_cpp = {
      \ }
 \ }
 
-"Forward traversal of tags with the same name
+"Forward traversal of tags with the same name 
 nmap <Leader>tn :tnext<CR>
-"Traverse tags with the same name in reverse
+"Traverse tags with the same name in reverse 
 nmap <Leader>tp :tprevious<CR>
 
-"
+" 
 " confirm: Confirm one by one before replacing
 " wholeword: Whether the whole word matches
 " replace: Replaced string
@@ -384,7 +394,7 @@ function! Replace(confirm, wholeword, replace)
 endfunction
 " Unconfirmed, incomplete word
 nnoremap <Leader>R :call Replace(0, 0, input('Replace '.expand('<cword>').' with: '))<CR>
-" Confirmed, whole words
+" Confirmed, whole words 
 nnoremap <Leader>rw :call Replace(0, 1, input('Replace '.expand('<cword>').' with: '))<CR>
 " Confirmed, incomplete word
 nnoremap <Leader>rc :call Replace(1, 0, input('Replace '.expand('<cword>').' with: '))<CR>
@@ -397,7 +407,7 @@ let g:UltiSnipsExpandTrigger="<leader><tab>"
 let g:UltiSnipsJumpForwardTrigger="<leader><tab>"
 let g:UltiSnipsJumpBackwardTrigger="<leader><s-tab>"
 
-" Use NERDTree plug-in to view project files.
+" Use NERDTree plug-in to view project files. 
 " Set shortcut keys, shorthand: file list
 nmap <Leader>fl :NERDTreeToggle<CR>
 " Set NERDTree child window width
@@ -453,6 +463,7 @@ function MyDiff()
   endif
 endfunction
 
+
 ```
 
 ### 安装插件
@@ -464,3 +475,9 @@ endfunction
 ````
 ![](./pictures/gvim_snap_shoot.png)
 
+
+## changelog
+
+- 2020-11-04
+
+> 解决右键菜单乱码问题
