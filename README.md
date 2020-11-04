@@ -473,7 +473,7 @@ endfunction
 ```
 :PluginInstall
 ````
-![](./pictures/gvim_snap_shoot.png)
+![](./pictures/gvim_plugin_install.png)
 
 
 ## changelog
