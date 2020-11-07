@@ -482,7 +482,7 @@ endfunction
 在命令模式下输入：
 
 ```text
-<Header>fl
+<Leader>fl
 
 ```
 
