@@ -1,7 +1,9 @@
 # winX 的 gvim 配置项
 
 
-![](/pictures/gvim_snap_shoot.png)
+![](pictures/use_vim_in_windows_start.png)
+
+![](pictures/gvim_snap_shoot.png)
 
 ## [在线文档](https://xiaomiwujiecao.github.io/use_vim_in_winX/#/)
 
