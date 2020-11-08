@@ -480,6 +480,11 @@ endfunction
 ````
 ![](./pictures/gvim_plugin_install.png)
  
+## 超全快捷键
+
+[超全快捷键--->点击进入](https://xiaomiwujiecao.github.io/use_vim_in_winX/#/guide) 
+ 
+ 
 ## `NerdTree` 树形文件目录
 
 ### 显示 `NErdTree` ：
